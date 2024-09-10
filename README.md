@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Project Overview](#project-overview)
+- [Architecture](#architecture)
 - [Features](#features)
 - [Setup Instructions](#setup-instructions)
 - [Usage](#usage)
@@ -10,7 +11,18 @@
 
 ## Project Overview
 
-This project creates a queryable index of documents using the **Gemini language model** and vector embeddings. It enables users to load documents, store them in a vector database, and query the information efficiently using natural language. The project utilizes libraries such as `llama_index`, `huggingface`, `dotenv`, and `chroma` for document handling, embedding, and querying processes.
+This project creates a queryable index of documents using the **Gemini language model** and vector embeddings. It allows users to load documents, store them in a vector database, and query the information efficiently using natural language. The project utilizes libraries such as `llama_index`, `huggingface`, `dotenv`, and `chroma` for document handling, embedding, and querying processes.
+
+## Architecture
+![RAG_FInal](https://github.com/user-attachments/assets/67cc1622-7d67-4395-9a52-db54ef41d123)
+
+An architecture diagram illustrating the document flow from input (documents) to querying and result generation using LlamaIndex, Chroma, and Gemini will be placed here. The diagram should include the following key components:
+
+1. **Document Ingestion**: Uploading documents for querying.
+2. **Vector Embeddings**: Document embeddings created using HuggingFace models.
+3. **Indexing**: Vector-based indexing of documents using Chroma.
+4. **Query Handling**: Processing natural language queries with Gemini.
+5. **Response Generation**: Returning results to the user.
 
 ## Key Features
 
@@ -61,13 +73,13 @@ This project creates a queryable index of documents using the **Gemini language 
 5. **Create Project Structure**
 
     - **Create a `data` Directory**: 
-      In the VS Code file explorer, right-click and create a new folder named `data`. This will hold the files you want to perform Q&A on.
+      This folder will hold the files you want to perform Q&A on.
 
     - **Add Files to the `data` Folder**: 
-      Place the documents you want to query in the `data` folder.
+      Place the documents you want to query in this folder.
 
     - **Create `app.py`**: 
-      In the root of your project, create a file called `app.py`.
+      This is the main file that handles the document querying logic.
 
 6. **Run the Application**
 
@@ -90,9 +102,11 @@ This project creates a queryable index of documents using the **Gemini language 
 
 ## Code Files
 
-- **[Main Indexing and Querying Code](app.py)**
-- **[Persistent Storage and Query Management](disk.py)**
-- **[Update and Delete Functionality](operation.py)**
+- **[Main Indexing and Querying Code](app.py)**: Contains the main logic for loading documents, creating the index, and querying the data.
+- **[Persistent Storage and Query Management](disk.py)**: Handles operations for persistent storage and query management using Chroma.
+- **[Update and Delete Functionality](operation.py)**: Contains code for updating and deleting data from the Chroma vector store.
+- **[Text List Reading Utility](try.py)**: Responsible for reading text files and converting them into a list format that can be processed by the system.
+
 
 ## Additional Notes
 
